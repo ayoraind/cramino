@@ -30,7 +30,7 @@ def version_message(String version) {
 
 def pipeline_start_message(String version, Map params){
     log.info "======================================================================"
-    log.info "    BAM/CRAM FILE ASSESSMENT: TAPIR MLST Pipeline version ${version}"
+    log.info "    BAM/CRAM FILE ASSESSMENT: TAPIR Pipeline version ${version}"
     log.info "======================================================================"
     log.info "Running version   : ${version}"
     log.info "Fastq inputs      : ${params.reads}"
