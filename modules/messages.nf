@@ -2,7 +2,7 @@ def help_message() {
   log.info """
         Usage:
         The typical command for running the pipeline is as follows:
-        nextflow run main.nf --reads "PathToReadFile(s)" --output_dir "PathToOutputDir" --assemblies "PathToAssemblies" 
+        nextflow run main.nf --reads "PathToReadFile(s)" --output_dir "PathToOutputDir" --assemblies "PathToAssemblies" --sequencing_date 'GYYMMDD' 
 
         Mandatory arguments:
          --reads                        Query fastqz file of sequences you wish to supply as input (e.g., "/MIGE/01_DATA/01_FASTQ/T055-8-*.fastq.gz")
@@ -19,9 +19,9 @@ def help_message() {
 def version_message(String version) {
       println(
             """
-            ====================================================
-             STRAIN RESOLUTION: TAPIR Pipeline version ${version}
-            ====================================================
+            ============================================================
+             BAM/CRAM FILE ASSESSMENT: TAPIR Pipeline version ${version}
+            ============================================================
             """.stripIndent()
         )
 
@@ -30,7 +30,7 @@ def version_message(String version) {
 
 def pipeline_start_message(String version, Map params){
     log.info "======================================================================"
-    log.info "             STRAIN RESOLUTION: TAPIR MLST Pipeline version ${version}"
+    log.info "    BAM/CRAM FILE ASSESSMENT: TAPIR MLST Pipeline version ${version}"
     log.info "======================================================================"
     log.info "Running version   : ${version}"
     log.info "Fastq inputs      : ${params.reads}"
