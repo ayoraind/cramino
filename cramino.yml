@@ -1,0 +1,9 @@
+name: cramino
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - cramino
+  - samtools==1.10
+  - minimap2==2.17
