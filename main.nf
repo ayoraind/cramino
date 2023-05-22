@@ -26,11 +26,11 @@ include { MINIMAP2_SAM; SAM_SORT_AND_INDEX; CRAMINO; CRAMINO_TRANSPOSE; COMBINE_
 workflow {
 
           read_ch = channel
-                          .fromPath( params.reads, checkIfExists: true )
+                          .fromPath( final_params.reads, checkIfExists: true )
                           .map { file -> tuple(file.simpleName, file) }
 
           assemblies_ch = channel
-                                .fromPath( params.assemblies, checkIfExists: true )
+                                .fromPath( final_params.assemblies, checkIfExists: true )
                                 .map { file -> tuple(file.simpleName, file) }
 
          joined_ch = read_ch.join(assemblies_ch)
@@ -48,7 +48,7 @@ workflow {
 
          collected_craminostatistics_ch = CRAMINO_TRANSPOSE.out.craminostats_ch.collect( sort: {a, b -> a[0].getBaseName() <=> b[0].getBaseName()} )
 
-         COMBINE_CRAMINO(collected_craminostatistics_ch, params.sequencing_date)
+         COMBINE_CRAMINO(collected_craminostatistics_ch, final_params.sequencing_date)
 }
 
 workflow.onComplete {
