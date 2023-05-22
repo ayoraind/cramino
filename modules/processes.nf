@@ -60,7 +60,7 @@ process CRAMINO {
     tag "qc of $meta bam output"
     
     
-    publishDir "${params.output_dir}", mode:'copy'
+  //  publishDir "${params.output_dir}", mode:'copy'
     
     
     errorStrategy { task.attempt <= 5 ? "retry" : "finish" }
