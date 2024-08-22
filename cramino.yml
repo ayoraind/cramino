@@ -2,7 +2,6 @@ name: cramino
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - cramino
   - samtools==1.10
