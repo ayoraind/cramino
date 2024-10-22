@@ -31,6 +31,9 @@ process SAM_SORT_AND_INDEX {
     tag "$meta"
 
    // publishDir "${params.output_dir}", mode:'copy'
+   
+    errorStrategy { task.attempt <= 5 ? "retry" : "finish" }
+    maxRetries 5
 
     input:
     tuple val(meta), path(sam), path(assembly)
