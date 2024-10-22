@@ -2,7 +2,7 @@
 
 FILE=${1}
 
-echo "Filename"$'\t'"number_of_alignments"$'\t'"percentage_from_total_reads"$'\t'"yield_GB"$'\t'"mean_coverage"$'\t'"N50"$'\t'"N75"$'\t'"median_length"$'\t'"mean_length"$'\t'"median_identity"$'\t'"mean_identity"$'\t'"modal_identity" > ${FILE}.transposed.craminoStats.txt
+echo "Filename"$'\t'"number_of_alignments"$'\t'"percentage_from_total_reads"$'\t'"yield_GB"$'\t'"mean_coverage"$'\t'"yield_GB_gt_25kb"$'\t'"N50"$'\t'"N75"$'\t'"median_length"$'\t'"mean_length"$'\t'"median_identity"$'\t'"mean_identity"$'\t'"modal_identity" > ${FILE}.transposed.craminoStats.txt
 
 
 number_of_alignments=$(cat ${FILE}.cramino.txt | awk 'NR == 2 {print $4}')
