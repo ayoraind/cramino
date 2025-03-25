@@ -8,6 +8,7 @@ def help_message() {
          --reads                        Query fastqz file of sequences you wish to supply as input (e.g., "/MIGE/01_DATA/01_FASTQ/T055-8-*.fastq.gz")
          --assemblies                   must be Flye assembly (e.g., "/MIGE/01_DATA/03_ASSEMBLY/*_FLYE/T055-8-*.fasta").
          --output_dir	                Output directory
+	 --sequencing_date		E.g., G220913
 
         Optional arguments:
          --help                         This usage statement.
